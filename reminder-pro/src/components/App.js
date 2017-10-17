@@ -7,13 +7,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: ''
+      text: '',
+      dueDate: ''
     };
   }
 
   handleChangeInput = (event) => {
     this.setState({
       text: event.target.value
+    });
+  }
+
+  handleChangeDate = (event) => {
+    this.setState({
+      dueDate: event.target.value
     });
   }
 
@@ -62,6 +69,11 @@ class App extends Component {
                   className='form-control'
                   placeholder='I have to...'
                   onChange={this.handleChangeInput}
+                />
+                <input
+                  className='form-control'
+                  type='datetime-local'
+                  onChange={this.handleChangeDate}
                 />
               </div>
               <button
