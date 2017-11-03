@@ -29,10 +29,8 @@ class App extends Component {
     this.props.addReminder(this.state.text, this.state.dueDate);
   }
 
-  deleteReminder = (id) => {
-    return () => {
-      this.props.deleteReminder(id);
-    };
+  deleteReminder = (id) => () => {
+    this.props.deleteReminder(id);
   }
 
   clearReminders = () => {
